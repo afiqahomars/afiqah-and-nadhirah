@@ -86,21 +86,7 @@ if df is not None:
     st.markdown('<p class="main-title">Food Delivery Performance & Operations Analytics</p>', unsafe_allow_html=True)
     st.markdown('<p class="sub-title">Interactive Business Intelligence Dashboard for Operational Performance</p>', unsafe_allow_html=True)
     
-    # Key Performance Indicator (KPI) Metric Cards
-    kpi1, kpi2, kpi3, kpi4 = st.columns(4)
-    
-    with kpi1:
-        st.metric(label="Total Sampled Orders", value=f"{len(df_filtered):,}")
-    with kpi2:
-        total_canceled = int((df_filtered['Cancellation Status'] == True).sum())
-        st.metric(label="Total Cancellations", value=f"{total_canceled:,}")
-    with kpi3:
-        avg_prep = df_filtered['Preparation Time (mins)'].mean()
-        st.metric(label="Avg Prep Time", value=f"{avg_prep:.1f} mins")
-    with kpi4:
-        avg_delivery = df_filtered['Delivery Time (mins)'].mean()
-        st.metric(label="Avg Delivery Time", value=f"{avg_delivery:.1f} mins")
-        # Key Performance Indicator (KPI) Metric Cards
+   # Key Performance Indicator (KPI) Metric Cards
     kpi1, kpi2, kpi3, kpi4 = st.columns(4)
     
     with kpi1:
@@ -124,7 +110,6 @@ if df is not None:
         st.metric(label="Avg Delivery Time", value=f"{avg_delivery:.1f} mins")
         # You can add another logo here or an icon if desired
         
-    st.markdown("---")
     st.markdown("---")
 
     # ==========================================
