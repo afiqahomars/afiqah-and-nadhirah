@@ -45,7 +45,7 @@ def load_data():
 df = load_data()
 
 if df is not None:
-    # ==========================================
+   # ==========================================
     # SIDEBAR FILTERING CONTROLS
     # ==========================================
     st.sidebar.header("📊 Dashboard Filters")
@@ -68,9 +68,12 @@ if df is not None:
         value=min(500, len(df)),
         step=50
     )
-   
     
-
+    # Apply filtering based on sidebar input
+    df_filtered = df[
+        (df['Order Hour (24h)'] >= selected_hours[0]) & 
+        (df['Order Hour (24h)'] <= selected_hours[1])
+    ]
     # ==========================================
     # HEADER SECTION & OVERVIEW METRICS
     # ==========================================
