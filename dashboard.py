@@ -993,4 +993,4 @@ if df is not None:
     plt.tight_layout()
     
     st.pyplot(fig)
-    st.caption("Insight: Strongly positive linear relationship verified ($r \\approx 0.86$). Base overhead is represented via the intercept axis.")
+    st.caption(r"Insight: Strongly positive linear relationship verified ($r \approx 0.86$). Base overhead is represented via the intercept axis.")
