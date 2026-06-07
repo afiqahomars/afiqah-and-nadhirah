@@ -100,7 +100,31 @@ if df is not None:
     with kpi4:
         avg_delivery = df_filtered['Delivery Time (mins)'].mean()
         st.metric(label="Avg Delivery Time", value=f"{avg_delivery:.1f} mins")
+        # Key Performance Indicator (KPI) Metric Cards
+    kpi1, kpi2, kpi3, kpi4 = st.columns(4)
+    
+    with kpi1:
+        st.metric(label="Total Sampled Orders", value=f"{len(df_filtered):,}")
+        # Added a global delivery fleet icon under total orders
+        st.image("https://raw.githubusercontent.com/Dens97/Logos/main/Grab_Logo.png", width=80)
         
+    with kpi2:
+        total_canceled = int((df_filtered['Cancellation Status'] == True).sum())
+        st.metric(label="Total Cancellations", value=f"{total_canceled:,}")
+        # Added a canceled/alert themed delivery icon under cancellations
+        st.image("https://raw.githubusercontent.com/Dens97/Logos/main/Foodpanda_Logo.png", width=80)
+        
+    with kpi3:
+        avg_prep = df_filtered['Preparation Time (mins)'].mean()
+        st.metric(label="Avg Prep Time", value=f"{avg_prep:.1f} mins")
+        # You can add another logo here or an icon if desired
+        
+    with kpi4:
+        avg_delivery = df_filtered['Delivery Time (mins)'].mean()
+        st.metric(label="Avg Delivery Time", value=f"{avg_delivery:.1f} mins")
+        # You can add another logo here or an icon if desired
+        
+    st.markdown("---")
     st.markdown("---")
 
     # ==========================================
