@@ -50,7 +50,12 @@ if df is not None:
     # ==========================================
     st.sidebar.header("📊 Dashboard Filters")
     st.sidebar.markdown("Fine-tune the data viewable on the dashboard charts below.")
-    
+    logo_col1, logo_col2 = st.sidebar.columns(2)
+    with logo_col1:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/d/db/Grab_Logo.svg", use_container_width=True)
+    with logo_col2:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/b/b3/Foodpanda_logo.svg", use_container_width=True)
+    st.sidebar.markdown("---")
     # 1. Hour Range Filter
     min_hour, max_hour = int(df['Order Hour (24h)'].min()), int(df['Order Hour (24h)'].max())
     selected_hours = st.sidebar.slider(
