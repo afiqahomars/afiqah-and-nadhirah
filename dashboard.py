@@ -68,7 +68,11 @@ if df is not None:
         value=min(500, len(df)),
         step=50
     )
-    
+    # --- BACKGROUND SONG COMPONENT ---
+try:
+    st.audio("background_music.mp3", format="audio/mp3")
+except Exception:
+    st.caption("⚠️ [background_music.mp3 file not found in repository]")
     # Apply filtering based on sidebar input
     df_filtered = df[
         (df['Order Hour (24h)'] >= selected_hours[0]) & 
