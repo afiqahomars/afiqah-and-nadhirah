@@ -69,7 +69,7 @@ if df is not None:
         step=50
     )
    
-    ]
+    
 
     # ==========================================
     # HEADER SECTION & OVERVIEW METRICS
