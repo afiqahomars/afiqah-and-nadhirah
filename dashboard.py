@@ -86,26 +86,38 @@ if df is not None:
     
     with kpi1:
         st.metric(label="Total Sampled Orders", value=f"{len(df_filtered):,}")
-        # Added a global delivery fleet icon under total orders
-        st.image("https://raw.githubusercontent.com/Dens97/Logos/main/Grab_Logo.png", width=80)
-        
+        # Added local Grab logo under Total Sampled Orders card
+        try:
+            st.image("grab_logo.png", width=80)
+        except Exception:
+            st.caption("⚠️ [grab_logo.png not found]")
+            
     with kpi2:
         total_canceled = int((df_filtered['Cancellation Status'] == True).sum())
         st.metric(label="Total Cancellations", value=f"{total_canceled:,}")
-        # Added a canceled/alert themed delivery icon under cancellations
-        st.image("https://raw.githubusercontent.com/Dens97/Logos/main/Foodpanda_Logo.png", width=80)
-        
+        # Added local Foodpanda logo under Total Cancellations card
+        try:
+            st.image("foodpanda_logo.png", width=80)
+        except Exception:
+            st.caption("⚠️ [foodpanda_logo.png not found]")
+            
     with kpi3:
         avg_prep = df_filtered['Preparation Time (mins)'].mean()
         st.metric(label="Avg Prep Time", value=f"{avg_prep:.1f} mins")
-        # You can add another logo here or an icon if desired
+        try:
+            st.image("shopeefood_logo.png", width=80)
+        except Exception:
+            st.caption("⚠️ [shopeefood_logo.png not found]")
+            
         
     with kpi4:
         avg_delivery = df_filtered['Delivery Time (mins)'].mean()
         st.metric(label="Avg Delivery Time", value=f"{avg_delivery:.1f} mins")
-        # You can add another logo here or an icon if desired
-        
-    st.markdown("---")
+        try:
+            st.image("beep_logo.png", width=80)
+        except Exception:
+            st.caption("⚠️ [beep_logo.png not found]")
+            
 
     # ==========================================
     # CHARTS LAYOUT SECTION
