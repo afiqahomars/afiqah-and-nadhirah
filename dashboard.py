@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
- import streamlit as st
+import streamlit as st
 
 audio_file = open('background_music.mp3', 'rb')
 audio_bytes = audio_file.read()
