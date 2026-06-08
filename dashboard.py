@@ -2,6 +2,12 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import streamlit as st
+
+audio_file = open('background_music.mp3', 'rb')
+audio_bytes = audio_file.read()
+
+st.audio(audio_bytes, format='audio/mp3')
 
 # ==========================================
 # PAGE CONFIGURATION & STYLING
@@ -79,13 +85,7 @@ if df is not None:
     # ==========================================
     st.markdown('<p class="main-title">Food Delivery Performance & Operations Analytics</p>', unsafe_allow_html=True)
     st.markdown('<p class="sub-title">Interactive Business Intelligence Dashboard for Operational Performance</p>', unsafe_allow_html=True)
-    import streamlit as st
-
-audio_file = open('background_music.mp3', 'rb')
-audio_bytes = audio_file.read()
-
-st.audio(audio_bytes, format='audio/mp3')
-
+    
     
    # Key Performance Indicator (KPI) Metric Cards
     kpi1, kpi2, kpi3, kpi4 = st.columns(4)
